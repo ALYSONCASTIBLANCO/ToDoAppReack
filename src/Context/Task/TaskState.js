@@ -5,7 +5,7 @@ import TaskContext from "./TaskContext";
 const TaskState=(props)=>{
     const intitialState={
         tasks:[],
-        selectedTask: null
+        selectedTask: null,
     }
 const[state, dispatch]=useReducer(TaskReducer, intitialState);
 const getTasks=async ()=>{
@@ -45,7 +45,7 @@ return (<TaskContext.Provider value={{
     tasks:state.tasks,
     selectedTask:state.selectedTask,
     getTasks,
-    getDetails
+    getDetails,
 }}>
     {props.children}
 </TaskContext.Provider>);

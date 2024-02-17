@@ -7,14 +7,11 @@ export default (state, action)=>{
                 ...state,
                 tasks:payload
             }
-            break;
-            case GET_DETAILS:
+        case GET_DETAILS:
                 return{
                     ...state,
                     selectedTask:payload
                 }
-                break;
-        
     
         default:
             return state;
