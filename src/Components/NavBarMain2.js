@@ -67,7 +67,7 @@ export default function NavBarMain2(){
                                     <Form.Control id="title" type="text" value={values.title} name="title" onChange={handleChange} placeholder='Type your new task'/>
                                 </Form.Group>
                                 <Form.Check onChange={handleCheckbox} checked={actualState} type="checkbox" label="Completed task?" id="checkbox"/>
-                                <Button type="submit" variant="primary" value="Submit" >Create Task</Button>                    
+                                <Button type="submit" variant="primary" onClick={()=>createTask()} >Create Task</Button>                    
                             </Form>
                         </Modal.Body>
                         </Modal>       
