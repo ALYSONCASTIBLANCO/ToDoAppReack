@@ -26,6 +26,7 @@ export default function TasksList(){
             title:values.title,
         }])});
         const data=await res.json();
+        console.log(data);
         
     }
 
@@ -45,6 +46,15 @@ export default function TasksList(){
         //alert(values.id)
     }
 
+    function DoneTask(done){
+        if(done){
+            return(<img className="icons" title='Done' alt='Done' src='/images/done-icon.webp'/>)
+            
+        }
+        else{
+            return (<img className="icons" title='Not done' alt='Not done' src='/images/notdone.png'/>)
+        }
+    }
     const handleChange=(e)=>{
         const {target}=e;
         const {name, value}=target;
@@ -73,7 +83,8 @@ export default function TasksList(){
                     <ListGroup.Item as="li" className="d-flex justify-content-between align-items-start" key={task._uuid}>
                     <a className="links" href='#!'  onClick={()=>getDetails(task._uuid)}> 
                         <div style={{backgroundColor:"transparent"}}className='ms-2 me-auto'>
-                                <h5>{task.title}</h5>
+                                <h6 style={{display:"inline-block"}}>{task.title}</h6>
+                                <div style={{ display:"inline-block", width:"30px", height:"auto", background:"transparent"}}>{DoneTask(task.completed)}</div>
                         </div>
                     </a>
                     </ListGroup.Item>

@@ -38,6 +38,7 @@ export default function NavBarMain2(){
             completed:actualState
         }])});
         const data=await res.json();
+        console.log(data);
         
 
         //alert(values.title+" "+actualState)  
@@ -73,7 +74,9 @@ export default function NavBarMain2(){
 
                 </Navbar.Brand>
                 <Navbar.Brand>
-                    <img title="Contact me" alt="Contact me" className="add"src="images/whatsapp.webp"/>
+                    <a target="_blank" href="tel:+573123949192">
+                        <img title="Contact me" alt="Contact me" className="add"src="images/whatsapp.webp"/>
+                    </a>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             </Navbar>
